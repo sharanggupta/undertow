@@ -20,6 +20,7 @@ package io.undertow.server.handlers;
 
 import java.util.Arrays;
 import java.util.Date;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TreeMap;
@@ -240,7 +241,7 @@ public class CookieImpl implements Cookie {
                         break;
                     case COOKIE_SAME_SITE_ATTR:
                         // enum will match constant name, no inner representation
-                        this.sameSiteMode = CookieSameSiteMode.valueOf(value.toUpperCase()).toString();
+                        this.sameSiteMode = CookieSameSiteMode.valueOf(value.toUpperCase(Locale.ROOT)).toString();
                         break;
                     case COOKIE_SECURE_ATTR:
                         this.secure = Boolean.valueOf(value);
